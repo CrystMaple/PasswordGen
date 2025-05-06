@@ -1,0 +1,111 @@
+body {
+    background-color: #007d2f;
+    color: #222;
+    user-select: none;
+    margin: 100px auto;
+    width: 570px;
+    padding: 0 60px;
+}
+button {
+    width: 100%;
+    font-size: 0.95rem;
+    border: none;
+    padding: 0;
+    line-height: 2.4rem;
+    background-color: #dadada;
+    color: #222;
+    font-family: sans-serif;
+    border-radius: 8px;
+}
+a {
+    color: #0c5cb7;
+}
+#frame-box {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px 40px;
+    box-shadow: 0 0 10px;
+}
+menu, #ctrl-area {
+    padding-inline-start: 0;
+    height: 2.2rem;
+    margin: 0;
+}
+menu>li, #ctrl-area>span {
+    float: left;
+    list-style-type: none;
+    font-size: 0;
+}
+#tab-bar li {
+    width: 23.875%;
+    margin-left: 1.5%;
+}
+#tab-bar li:first-child {
+    margin-left: 0;
+}
+#ctrl-area>span {
+    width: calc(97% / 3);
+    margin-left: 1.5%;
+}
+#ctrl-area>span:first-child {
+    margin-left: 0;
+}
+#page-pin, #page-identifier, #page-custom {
+    display: none;
+}
+.pages {
+    border: solid;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+.option-line {
+    margin: 7px 10px;
+}
+#result-area {
+    margin: 20px 0;
+}
+#result-box {
+    box-sizing: border-box;
+    color: #222;
+    width: 100%;
+    text-align: center;
+    font-family: 'Noto Sans Mono';
+    font-size: 1.3rem;
+    border: solid;
+    border-radius: 8px;
+    padding: 0.4rem 14px;
+    outline: none;
+}
+#length {
+    padding: 0.5rem;
+    color: #222;
+    width: 4.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #dadada;
+    font-size: 1.1rem;
+    outline: none;
+}
+#tab-common, #button-copy {
+    background-color: #007d2f;
+    color: #fff;
+}
+#option-area div {
+    line-height: 2rem;
+}
+dialog {
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    color: #222;
+    border: none;
+    box-shadow: 0 0 10px;
+    user-select: none;
+}
+#separator {
+    margin: 0 3px;
+    color: #818181;
+}
+dialog>p:first-child {
+    margin-top: 0;
+}

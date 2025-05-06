@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="preconnect" href="https://s4.zstatic.net" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="icon" href="/images/favicon.png">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
+        <title>密码生成</title>
+        <script src="https://s4.zstatic.net/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+        <script src="/js/generate.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <div id="frame-box">
+                <div id="main-box">
+                    <menu id="tab-bar">
+                        <li>
+                            <button id="tab-common">
+                                <i class="fa-solid fa-lock"></i>
+                                <span>常规</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button id="tab-pin">
+                                <i class="fa-solid fa-credit-card"></i>
+                                <span>PIN</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button id="tab-identifier">
+                                <i class="fa-solid fa-tag"></i>
+                                <span>标识符</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button id="tab-custom">
+                                <i class="fa-solid fa-ellipsis"></i>
+                                <span>自定义</span>
+                            </button>
+                        </li>
+                    </menu>
+                    <div id="option-area">
+                        <div id="page-common" class="pages">
+                            <div class="option-line">
+                                <span>
+                                    <input type="radio" id="strength-simple" name="strength" value="simple">
+                                    <label for="strength-simple">简单</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="strength-normal" name="strength" value="normal" checked>
+                                    <label for="strength-normal">普通</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="strength-complex" name="strength" value="complex">
+                                    <label for="strength-complex">复杂</label>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="page-pin" class="pages">
+                            <div class="option-line">
+                                <span>
+                                    <input type="radio" id="pinlength-4" name="pinlength" value="4">
+                                    <label for="pinlength-4">4位</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="pinlength-6" name="pinlength" value="6" checked>
+                                    <label for="pinlength-6">6位</label>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="page-identifier" class="pages">
+                            <div class="option-line">
+                                <span>
+                                    <input type="radio" id="idtype-uuid" name="idtype" checked>
+                                    <label for="idtype-uuid">UUID</label>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="page-custom" class="pages">
+                            <div class="option-line">
+                                <span>
+                                    <input type="checkbox" id="component-capital" class="component" name="component" checked>
+                                    <label for="component-capital">大写字母</label>
+                                </span>
+                                <span>
+                                    <input type="checkbox" id="component-lowercase" class="component" name="component" checked>
+                                    <label for="component-lowercase">小写字母</label>
+                                </span>
+                                <span>
+                                    <input type="checkbox" id="component-number" class="component" name="component" checked>
+                                    <label for="component-number">数字</label>
+                                </span>
+                                <span>
+                                    <input type="checkbox" id="component-character" class="component" name="component" checked>
+                                    <label for="component-character">符号</label>
+                                </span>
+                            </div>
+                            <div class="option-line">
+                                <label for="length">长度：<input type="number" id="length" name="length" value="12" min="4" max="65536"></label>
+                            </div>
+                            <div class="option-line">
+                                <span>
+                                    <input type="checkbox" id="extra-exclude" name="extra" checked>
+                                    <label for="extra-exclude">排除易混淆项</label>
+                                </span>
+                                <span title="保证结果中含有所有已选的字符类别">
+                                    <input type="checkbox" id="extra-check" name="extra" checked>
+                                    <label for="extra-check">检测字符类别</label>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="result-area">
+                        <input id="result-box" type="text" aria-label="生成结果" readonly>
+                    </div>
+                    <div id="ctrl-area">
+                        <span>
+                            <button id="button-copy">
+                                <i id="copy-icon" class="fa-solid fa-copy"></i>
+                                <span id="copy-label">复制</span>
+                            </button>
+                        </span>
+                        <span>
+                            <button id="button-refresh">
+                                <i class="fa-solid fa-rotate-right"></i>
+                                <span>刷新</span>
+                            </button>
+                        </span>
+                        <span>
+                            <button id="button-about">
+                                <i class="fa-solid fa-info"></i>
+                                <span>关于</span>
+                            </button>
+                        </span>
+                    </div>
+                    <dialog>
+                        <p>
+                            <span>作者：</span>
+                            <a href="https://www.crystmaple.net" target="_blank">水碧枫</a>
+                            <span id="separator">|</span>
+                            <span>版本：1.0</span>
+                            <span id="separator">|</span>
+                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/CrystMaple/PasswordGen" target="_blank">代码仓库</a>
+                        </p>
+                        <p>请使用最新版 Chrome / Firefox / Edge 浏览器访问</p>
+                        <p>请勿将生成结果用于涉及资金和隐私安全的重要场景</p>
+                        <button id="close-dialog">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>关闭</span>
+                        </button>
+                    </dialog>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
