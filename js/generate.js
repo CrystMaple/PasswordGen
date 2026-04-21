@@ -149,7 +149,7 @@ function tabSwitch (target) {
         return;
     $('#tab-' + currentPage).css('background-color', '#dadada');
     $('#tab-' + currentPage).css('color', '#222');
-    $('#tab-' + target).css('background-color', '#007d2f');
+    $('#tab-' + target).css('background-color', '#222');
     $('#tab-' + target).css('color', '#fff');
     $('#page-' + currentPage).hide();
     $('#page-' + target).show();

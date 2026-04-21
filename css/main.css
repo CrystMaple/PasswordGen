@@ -1,8 +1,7 @@
 body {
-    background-color: #007d2f;
     color: #222;
     user-select: none;
-    margin: 100px auto;
+    margin: 300px auto;
     width: 570px;
     padding: 0 60px;
 }
@@ -22,9 +21,9 @@ a {
 }
 #frame-box {
     background-color: #fff;
+    border: solid;
     border-radius: 15px;
     padding: 30px 40px;
-    box-shadow: 0 0 10px;
 }
 menu, #ctrl-area {
     padding-inline-start: 0;
@@ -87,7 +86,7 @@ menu>li, #ctrl-area>span {
     outline: none;
 }
 #tab-common, #button-copy {
-    background-color: #007d2f;
+    background-color: #222;
     color: #fff;
 }
 #option-area div {
