@@ -11,7 +11,7 @@ button {
     border: none;
     padding: 0;
     line-height: 2.4rem;
-    background-color: #dadada;
+    background-color: #eaeaea;
     color: #222;
     font-family: sans-serif;
     border-radius: 8px;
@@ -81,7 +81,7 @@ menu>li, #ctrl-area>span {
     width: 4.2rem;
     border: none;
     border-radius: 5px;
-    background-color: #dadada;
+    background-color: #eaeaea;
     font-size: 1.1rem;
     outline: none;
 }

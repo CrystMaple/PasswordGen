@@ -1,3 +1,4 @@
+"use strict";
 function getValidArray(arrayLength, elementBorder) {
     const validArray = new Uint8Array(arrayLength);
     let validCount = 0;
@@ -147,7 +148,7 @@ function refreshPasswd () {
 function tabSwitch (target) {
     if (currentPage == target)
         return;
-    $('#tab-' + currentPage).css('background-color', '#dadada');
+    $('#tab-' + currentPage).css('background-color', '#eaeaea');
     $('#tab-' + currentPage).css('color', '#222');
     $('#tab-' + target).css('background-color', '#222');
     $('#tab-' + target).css('color', '#fff');
